@@ -490,3 +490,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product-if-exists, hardware/qcom/msm8994/msm8992.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8994/msm8994-gpu-vendor.mk)
+
+# Open GApps
+ifneq ($(HAS_GAPPS),false)
+    $(call inherit-product-if-exists, device/lge/bullhead/opengapps.mk)
+    $(call inherit-product-if-exists, vendor/google/build/opengapps-packages.mk)
+endif
